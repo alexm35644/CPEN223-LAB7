@@ -3,6 +3,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO.Pipes;
+using System.Runtime.InteropServices;
 
 namespace Lab7
 {
@@ -12,6 +14,7 @@ namespace Lab7
         static void Main()
         {
             //You could mainly use unit tests for testing.       
+            
         }
 
     }
@@ -24,7 +27,15 @@ namespace Lab7
         /// <param name="reversed">A stack containing the reverse of stack. Originally, reversed is an empty stack.</param>
         public static void Reverse(Stack<int> stack, Stack<int> reversed)
         {
-
+            if(stack.Count == 0)
+            {
+                return;
+            }
+            else
+            {
+                reversed.Push(stack.Pop());
+                Reverse(stack, reversed);
+            }
         }
 
         /// <summary>
@@ -35,7 +46,7 @@ namespace Lab7
         /// <returns>True if sub is a subset of set, false otherwise.</returns>
         public static bool IsASubset(List<int> sub, List<int> set)
         {
-
+            
         }
 
         /// <summary>
@@ -45,10 +56,19 @@ namespace Lab7
         /// <returns>A string containing the binary equivalent of num.</returns>
         public static string ToBinary(int num)
         {
-
+            
+            if(num == 1)
+            {
+                return "1";
+            }else if(num == 0)
+            {
+                return "0";
+            }
+            else
+            {
+                return ToBinary(num/2) + num%2;
+            }
         }
     }
 }
-Do not forget to thoroughly test your methods by writing your own unit tests. You should submit your unit test file as requested.
 
-============
