@@ -14,7 +14,15 @@ namespace Lab7
         static void Main()
         {
             //You could mainly use unit tests for testing.       
-            
+            var bruh = new List<int>();
+            bruh.Add(1);
+            bruh.Add(7);
+            var bruh2 = new List<int>();
+            bruh2.Add(1);
+            bruh2.Add(1);
+            bruh2.Add(3);
+            Console.WriteLine(Recursion.IsASubset(bruh, bruh2));
+
         }
 
     }
@@ -46,7 +54,19 @@ namespace Lab7
         /// <returns>True if sub is a subset of set, false otherwise.</returns>
         public static bool IsASubset(List<int> sub, List<int> set)
         {
-            
+            if(sub.Count == 0)
+            {
+                return true;
+            }
+            else
+            {
+                if (!set.Contains(sub[sub.Count - 1]))
+                {
+                    return false;
+                }
+                sub.RemoveAt(sub.Count-1);
+                return IsASubset(sub, set);
+            }
         }
 
         /// <summary>

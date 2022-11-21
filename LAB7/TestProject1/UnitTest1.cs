@@ -25,6 +25,82 @@ namespace TestProject1
         }
 
         [TestMethod]
+        public void SubsetTest1() //Tests a subset with duplicate values 
+        {
+            var sub = new List<int>();
+            sub.Add(1);
+            sub.Add(1);
+            var set = new List<int>();
+            set.Add(1);
+            set.Add(2);
+            set.Add(3);
+            var expected = true;
+            var output = Recursion.IsASubset(sub, set);
+            
+            Assert.AreEqual(expected, output);
+        }
+
+        [TestMethod]
+        public void SubsetTest2() //Tests a subset with unique values (including neg number)
+        {
+            var sub = new List<int>();
+            sub.Add(-1);
+            sub.Add(int.MaxValue);
+            var set = new List<int>();
+            set.Add(-1);
+            set.Add(2);
+            set.Add(int.MaxValue);
+            var expected = true;
+            var output = Recursion.IsASubset(sub, set);
+
+            Assert.AreEqual(expected, output);
+        }
+
+        [TestMethod]
+        public void SubsetTest3() //Tests an empty subset
+        {
+            var sub = new List<int>();
+            var set = new List<int>();
+            set.Add(1);
+            set.Add(2);
+            set.Add(3);
+            var expected = true;
+            var output = Recursion.IsASubset(sub, set);
+
+            Assert.AreEqual(expected, output);
+        }
+
+        [TestMethod]
+        public void SubsetTest4() //Tests a subset with some true and some false values 
+        {
+            var sub = new List<int>();
+            sub.Add(1);
+            sub.Add(7);
+            var set = new List<int>();
+            set.Add(1);
+            set.Add(2);
+            set.Add(3);
+            var expected = false;
+            var output = Recursion.IsASubset(sub, set);
+
+            Assert.AreEqual(expected, output);
+        }
+
+        [TestMethod]
+        public void SubsetTest5() //Tests a subset with all false values 
+        {
+            var sub = new List<int>();
+            sub.Add(int.MaxValue);
+            sub.Add(7);
+            var set = new List<int>();
+            var expected = false;
+            var output = Recursion.IsASubset(sub, set);
+
+            Assert.AreEqual(expected, output);
+        }
+
+
+        [TestMethod]
         public void BinaryTest1() //Tests an odd positive int
         {
             string val = Recursion.ToBinary(13);
