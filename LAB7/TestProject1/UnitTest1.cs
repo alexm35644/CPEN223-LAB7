@@ -6,22 +6,37 @@ namespace TestProject1
     public class UnitTest1
     {
         [TestMethod]
-        public void StackTest1()
+        public void StackTest1() //Checking if stack is reversed. Includes negative values and 0.
         {
-            Stack<int> stack = new Stack<int>();
+            var stack = new Stack<int>();
+            var stack2 = new Stack<int>();
+            stack.Push(-3);
+            stack.Push(2);
+            stack.Push(0);
+            var expected = new Stack<int>();
+            expected.Push(0);
+            expected.Push(2);
+            expected.Push(-3);
+
+            Recursion.Reverse(stack, stack2);            
+            CollectionAssert.AreEquivalent(expected, stack2);
+        }
+
+        [TestMethod]
+        public void StackTest2() //Making sure stack is unmodified after method returns
+        {
+            var stack = new Stack<int>();
             var stack2 = new Stack<int>();
             stack.Push(3);
             stack.Push(2);
             stack.Push(1);
-            Recursion.Reverse(stack, stack2);
-
             var expected = new Stack<int>();
-            for (int i = 1; i <= 3; i++)
-            {
-                expected.Push(i);
-            }
-
-            CollectionAssert.AreEquivalent(expected, stack2);
+            expected.Push(3);
+            expected.Push(2);
+            expected.Push(1);
+            
+            Recursion.Reverse(stack, stack2);
+            CollectionAssert.AreEquivalent(expected, stack);
         }
 
         [TestMethod]
@@ -34,9 +49,9 @@ namespace TestProject1
             set.Add(1);
             set.Add(2);
             set.Add(3);
+
             var expected = true;
             var output = Recursion.IsASubset(sub, set);
-            
             Assert.AreEqual(expected, output);
         }
 
@@ -50,9 +65,9 @@ namespace TestProject1
             set.Add(-1);
             set.Add(2);
             set.Add(int.MaxValue);
+
             var expected = true;
             var output = Recursion.IsASubset(sub, set);
-
             Assert.AreEqual(expected, output);
         }
 

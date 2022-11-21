@@ -14,15 +14,21 @@ namespace Lab7
         static void Main()
         {
             //You could mainly use unit tests for testing.       
-            var bruh = new List<int>();
-            bruh.Add(1);
-            bruh.Add(7);
-            var bruh2 = new List<int>();
-            bruh2.Add(1);
-            bruh2.Add(1);
-            bruh2.Add(3);
-            Console.WriteLine(Recursion.IsASubset(bruh, bruh2));
+            Stack<int> stack = new Stack<int>();
+            var stack2 = new Stack<int>();
+            stack.Push(3);
+            stack.Push(2);
+            stack.Push(1);
+            Recursion.Reverse(stack, stack2);
 
+            foreach(int x in stack)
+            {
+                Console.WriteLine(x);
+            }
+            foreach(int x in stack2)
+            {
+                Console.WriteLine(x);
+            }
         }
 
     }
@@ -37,6 +43,10 @@ namespace Lab7
         {
             if(stack.Count == 0)
             {
+                foreach(var x in reversed) //Making sure stack is unmodified
+                {
+                    stack.Push(x);
+                }
                 return;
             }
             else

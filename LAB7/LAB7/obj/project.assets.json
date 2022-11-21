@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\alexm\\.nuget\\packages\\": {}
+    "C:\\Users\\turbo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alexm\\Desktop\\LAB7\\LAB7\\LAB7\\LAB7.csproj",
+      "projectUniqueName": "C:\\Users\\turbo\\Desktop\\lab7\\LAB7\\LAB7\\LAB7.csproj",
       "projectName": "LAB7",
-      "projectPath": "C:\\Users\\alexm\\Desktop\\LAB7\\LAB7\\LAB7\\LAB7.csproj",
-      "packagesPath": "C:\\Users\\alexm\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alexm\\Desktop\\LAB7\\LAB7\\LAB7\\obj\\",
+      "projectPath": "C:\\Users\\turbo\\Desktop\\lab7\\LAB7\\LAB7\\LAB7.csproj",
+      "packagesPath": "C:\\Users\\turbo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\turbo\\Desktop\\lab7\\LAB7\\LAB7\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\alexm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\turbo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -61,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
